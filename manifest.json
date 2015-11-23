@@ -1,0 +1,28 @@
+{
+  "name": "My Extension",
+  "version": "2.1",
+  "manifest_version":2,
+  "permissions": [
+	"tabs",
+	"activeTab"
+	],
+  "description": "Gets information from Google.",
+  "icons": { "128": "icon_128.png" },
+  "background": {
+    "persistent": false,
+    "scripts": ["popup.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["ext.js"]
+    }
+  ],
+  "permissions": ["http://*.google.com/", "https://*.google.com/"],
+  "browser_action": {
+    "default_title": "Extension",
+    "default_icon": "icon_19.png",
+    "default_popup": "extDemo.html"
+  }
+}
+	
